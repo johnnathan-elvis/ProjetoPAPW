@@ -8,7 +8,7 @@ module.exports = {
     connection: {
       host : '127.0.0.1',
       user : 'postgres',
-      password : 'Y@smercy23',
+      password : '*****',
       database : 'projeto'
     },
     migrations:{
