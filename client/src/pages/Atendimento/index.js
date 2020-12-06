@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import TextField from '@material-ui/core/TextField';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiTrash2, FiEdit } from 'react-icons/fi';
+import { RiAddLine } from "react-icons/ri";
 
 
 import './style.css';
@@ -32,40 +32,40 @@ const Atendimento = props => {
 
   return (
     <div>
-      <Link className="button" id="novo" to="/novoAtendimento">Cadastrar novo caso</Link>
+      <Link className="button" id="novo" to="/novoAtendimento"><RiAddLine id="add" size={20} color="white"/>Novo</Link>
       <div className="content">
-        <ul>
+      
+            <table id="customers">
+            <tr>
+              <th>ID</th>
+              <th>Coordenador</th>
+              <th>Assunto</th>
+              <th>Descrição</th>
+              <th>Data</th>
+              <th></th>
+            </tr>
           {atendimentos.map(atendimento => (
-              <li key={atendimento.id}>
-              <div className="gordura"> 
-              <strong>id: </strong>
-              <p>{atendimento.id}</p>               
-              </div>
-              <div className="gordura"> 
-              <strong>coordenador: </strong>
-              <p>{atendimento.coordenador}</p>
-              </div>
-              <div className="gordura"> 
-              <strong>assunto:</strong>
-              <p>{atendimento.assunto}</p>
-              </div>
-              <div className="gordura"> 
-              <strong>descricao:</strong>
-              <p>{atendimento.descricao}</p>
-              </div>
-              <div className="gordura"> 
-              <strong>data:</strong>
-              <p>{atendimento.data}</p>
-              </div>
-              <button onClick={() => handleDeleteAtendimento(atendimento.id)} type="button">
+
+            <tr key={atendimento.id}>
+              <td>{atendimento.id}</td>
+              <td>{atendimento.coordenador}</td>
+              <td>{atendimento.assunto}</td>
+              <td>{atendimento.descricao}</td>
+              <td>{atendimento.data}</td>
+              <td>
+                <button onClick={() => handleDeleteAtendimento(atendimento.id)} type="button">
               <FiTrash2 size={20} color="#A8A8B3"/>
-              </button>
-            
-              <Link className="Editar" to={"/editar/" + atendimento.id}>Editar</Link> 
-            
-            </li>  
+               </button>
+                  <button id="editar">
+                    <Link className="Editar" to={"/editar/" + atendimento.id}> <FiEdit size={20} color="#A8A8B3"/></Link>
+                  </button>  
+               </td>
+            </tr>
           ))}  
-        </ul>
+
+          </table>
+
+             
       </div>
     </div>
   ); 
