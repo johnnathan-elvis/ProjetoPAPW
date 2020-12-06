@@ -1,0 +1,12 @@
+ .container {
+    text-align: center;
+  }
+
+a:link 
+{ 
+ text-decoration:none; 
+} 
+
+#cor{
+    color: white;
+}
