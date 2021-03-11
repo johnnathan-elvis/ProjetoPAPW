@@ -1,5 +1,6 @@
 # ProjetoPAPW
-Projeto final da cadeira de Programação Avançada para Web
+Projeto final da cadeira de Programação Avançada para Web, 
+onde objetivo foi fazer um crud de uma página onde aparecia uma lista para editar, adicionar e remover dela.
 
 
 Grupo:
